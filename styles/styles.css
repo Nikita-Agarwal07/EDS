@@ -258,8 +258,7 @@ main .section.highlight {
 
 .text-center {
     text-align: center;
+    background-color: #3498db;
+    color: darkred;
 }
-.custom-colors {
-    background-color: #3498db; /* Background color (blue in this case) */
-    color: white; /* Text color */
-}
+
