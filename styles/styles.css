@@ -260,3 +260,7 @@ main .section.highlight {
     text-align: center;
     text-decoration-color: red;
 }
+.custom-colors {
+    background-color: #3498db; /* Background color (blue in this case) */
+    color: white; /* Text color */
+}
