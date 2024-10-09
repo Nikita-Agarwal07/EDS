@@ -251,7 +251,11 @@ main > .section:first-of-type {
 /* section metadata */
 main .section.light,
 main .section.highlight {
-  background-color: red;
+  background-color: lightblue;
   margin: 0;
   padding: 40px 0;
+}
+main .section.red {
+    background-color: red;
+
 }
