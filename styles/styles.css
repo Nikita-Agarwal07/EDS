@@ -256,8 +256,6 @@ main .section.highlight {
   padding: 40px 0;
 }
 
-.centered-text {
+.text-center {
     text-align: center;
-    font-size: 24px; /* Adjust the size as needed */
 }
-
