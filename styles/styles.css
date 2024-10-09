@@ -259,3 +259,9 @@ main .section.red {
     background-color: red;
 
 }
+
+.centered-text {
+    text-align: center;
+    font-size: 24px; /* Adjust the size as needed */
+}
+
