@@ -5,24 +5,24 @@ const { btnNxt, btnPre } = placeholders;
 
 export default function decorate(block) {
   console.log("placeholders ---> ", placeholders, btnNxt, btnPre);
-  const rows = [...block.children];
+  const rows = Array.from(block.children);
 
   rows.forEach((row, r) => {
     if (r === 0) {
       const nextbtn = document.createElement('button');
       nextbtn.classList.add('btn', 'btn-next');
       const node = document.createTextNode(btnNxt);
-      nextbtn.append(node);
+      nextbtn.appendChild(node);
       row.replaceWith(nextbtn);
     } else if (r === rows.length - 1) {
       const prebtn = document.createElement('button');
       prebtn.classList.add('btn', 'btn-prev');
       const node = document.createTextNode(btnPre);
-      prebtn.append(node);
+      prebtn.appendChild(node);
       row.replaceWith(prebtn);
     } else {
       row.classList.add('slide');
-      [...row.children].forEach((col, c) => {
+      Array.from(row.children).forEach((col, c) => {
         if (c === 1) {
           col.classList.add('slide-text');
         }
@@ -46,12 +46,8 @@ export default function decorate(block) {
   const maxSlide = slides.length - 1;
 
   // Add event listener and navigation functionality for the next button
-  nextSlide.addEventListener("click", function () {
-    if (curSlide === maxSlide) {
-      curSlide = 0;
-    } else {
-      curSlide++;
-    }
+  nextSlide.addEventListener("click", () => {
+    curSlide = (curSlide === maxSlide) ? 0 : curSlide + 1;
 
     // Move slides by -100%
     slides.forEach((slide, indx) => {
@@ -63,12 +59,8 @@ export default function decorate(block) {
   const prevSlide = document.querySelector(".btn-prev");
 
   // Add event listener and navigation functionality for the previous button
-  prevSlide.addEventListener("click", function () {
-    if (curSlide === 0) {
-      curSlide = maxSlide;
-    } else {
-      curSlide--;
-    }
+  prevSlide.addEventListener("click", () => {
+    curSlide = (curSlide === 0) ? maxSlide : curSlide - 1;
 
     // Move slides by 100%
     slides.forEach((slide, indx) => {
