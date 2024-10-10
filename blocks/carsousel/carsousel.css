@@ -49,6 +49,7 @@ div.slide-text{
     font-size: 18px;
     color: black;
 }
+
 .btn:active {
     *transform: scale(1.1);
 }
