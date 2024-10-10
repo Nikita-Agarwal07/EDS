@@ -1,10 +1,10 @@
 import { fetchPlaceholders, getMetadata } from '../../scripts/aem.js';
 
-const placeholders = await fetchPlaceholders(getMetadata("locale"));
+const placeholders = await fetchPlaceholders(getMetadata('locale'));
 const { btnNxt, btnPre } = placeholders;
 
 export default function decorate(block) {
-  console.log("placeholders ---> ", placeholders, btnNxt, btnPre);
+  console.log('placeholders ---> ', placeholders, btnNxt, btnPre);
   const rows = Array.from(block.children);
 
   rows.forEach((row, r) => {
@@ -30,7 +30,7 @@ export default function decorate(block) {
     }
   });
 
-  const slides = document.querySelectorAll(".slide");
+  const slides = document.querySelectorAll('.slide');
 
   // Loop through slides and set each slide's translateX
   slides.forEach((slide, indx) => {
@@ -38,7 +38,7 @@ export default function decorate(block) {
   });
 
   // Select next slide button
-  const nextSlide = document.querySelector(".btn-next");
+  const nextSlide = document.querySelector('.btn-next');
 
   // Current slide counter
   let curSlide = 0;
@@ -46,7 +46,7 @@ export default function decorate(block) {
   const maxSlide = slides.length - 1;
 
   // Add event listener and navigation functionality for the next button
-  nextSlide.addEventListener("click", () => {
+  nextSlide.addEventListener('click', () => {
     curSlide = (curSlide === maxSlide) ? 0 : curSlide + 1;
 
     // Move slides by -100%
@@ -56,10 +56,10 @@ export default function decorate(block) {
   });
 
   // Select previous slide button
-  const prevSlide = document.querySelector(".btn-prev");
+  const prevSlide = document.querySelector('.btn-prev');
 
   // Add event listener and navigation functionality for the previous button
-  prevSlide.addEventListener("click", () => {
+  prevSlide.addEventListener('click', () => {
     curSlide = (curSlide === 0) ? maxSlide : curSlide - 1;
 
     // Move slides by 100%
