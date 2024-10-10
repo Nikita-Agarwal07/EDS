@@ -16,6 +16,7 @@ export default function decorate(block) {
       nextbtn.appendChild(node);
 
       row.replaceWith(nextbtn);
+
     } else if (r === rows.length - 1) {
       const prebtn = document.createElement('button');
       prebtn.classList.add('btn', 'btn-prev');
@@ -24,6 +25,7 @@ export default function decorate(block) {
       prebtn.appendChild(node);
 
       row.replaceWith(prebtn);
+
     } else {
       row.classList.add('slide');
 
@@ -37,9 +39,7 @@ export default function decorate(block) {
 
   const slides = document.querySelectorAll('.slide');
 
-  // Ensure proper empty lines for CSS linting rules
-
-  // Loop through slides and set each slide's translateX
+  // Add empty lines between rule blocks for style manipulations
   slides.forEach((slide, indx) => {
     slide.style.transform = `translateX(${indx * 100}%)`;
   });
@@ -49,6 +49,7 @@ export default function decorate(block) {
 
   // Current slide counter
   let curSlide = 0;
+
   // Maximum number of slides
   const maxSlide = slides.length - 1;
 
